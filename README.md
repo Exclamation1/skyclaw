@@ -6,6 +6,8 @@
 
 Cloud-native Rust AI agent runtime. Telegram-native. One binary, zero config files.
 
+> 🌐 **Ngôn ngữ / Languages**: [Tiếng Việt](README.vi.md)
+
 ## What It Does
 
 SkyClaw is an autonomous AI agent that lives on your server and talks to you through Telegram. It can run shell commands, browse the web, read and write files, and fetch URLs — all controlled through natural conversation.
@@ -14,19 +16,39 @@ No web dashboards. No config files to edit. Just deploy, paste your API key in T
 
 ## 3-Step Setup
 
-```bash
-# 1. Get a bot token from @BotFather on Telegram
+### Step 1 — Get a Telegram Bot Token
 
-# 2. Deploy
+Create a Telegram bot and get its token through **@BotFather**:
+
+1. Open Telegram and search for **@BotFather** (look for the blue checkmark ✔️).
+2. Send `/newbot` and follow the prompts:
+   - Choose a **display name** (e.g. `My SkyClaw Agent`)
+   - Choose a **username** ending in `bot` (e.g. `my_skyclaw_bot`)
+3. BotFather replies with a token like: `123456789:AABBccDDeeFFggHH...`
+
+> 📖 Full walkthrough: [How to Get a Telegram Bot Token](docs/dev/telegram-bot-token.md)
+
+### Step 2 — Deploy
+
+```bash
 git clone https://github.com/nagisanzenin/skyclaw.git
 cd skyclaw
 cargo build --release
-export TELEGRAM_BOT_TOKEN="your-token-here"
+export TELEGRAM_BOT_TOKEN="123456789:AABBccDDeeFFggHH..."
 ./target/release/skyclaw start
-
-# 3. Open your bot in Telegram and paste your API key
-#    SkyClaw auto-detects the provider and goes online
 ```
+
+### Step 3 — Connect an AI Provider
+
+Open your bot in Telegram and paste an API key:
+
+```
+sk-ant-...          ← Anthropic Claude
+sk-...              ← OpenAI GPT
+AIzaSy...           ← Google Gemini
+```
+
+SkyClaw auto-detects the provider and goes online.
 
 ## Supported Providers
 

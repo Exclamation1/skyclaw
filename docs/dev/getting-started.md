@@ -12,6 +12,20 @@ This guide walks through setting up a development environment for SkyClaw, build
 | Docker | 24.x+ | Container builds (optional) |
 | Chrome/Chromium | Latest | Browser automation tool (optional) |
 | SQLite | 3.x | Default memory backend (usually pre-installed) |
+| Telegram Bot Token | — | Required for Telegram channel |
+
+### Obtaining a Telegram Bot Token
+
+SkyClaw's default channel is Telegram, so you need a bot token before running the server. See the step-by-step guide: **[How to Get a Telegram Bot Token](telegram-bot-token.md)**
+
+In short:
+1. Open **@BotFather** on Telegram (blue checkmark ✔️).
+2. Send `/newbot`, follow the prompts.
+3. Copy the token (`123456789:AABBcc...`) and export it:
+
+```bash
+export TELEGRAM_BOT_TOKEN="123456789:AABBccDDeeFFggHH..."
+```
 
 ### Installing Rust
 
