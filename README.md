@@ -6,6 +6,8 @@
 
 Cloud-native Rust AI agent runtime. Telegram-native. One binary, zero config files.
 
+> 🌐 **Ngôn ngữ / Languages**: [Tiếng Việt](README.vi.md)
+
 ## What It Does
 
 SkyClaw is an autonomous AI agent that lives on your server and talks to you through Telegram. It can run shell commands, browse the web, read and write files, and fetch URLs — all controlled through natural conversation.
