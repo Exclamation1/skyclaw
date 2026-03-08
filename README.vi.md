@@ -16,19 +16,39 @@ Không cần web dashboard. Không cần chỉnh file cấu hình. Chỉ cần d
 
 ## Cài Đặt Nhanh (3 bước)
 
-```bash
-# Bước 1: Lấy bot token từ @BotFather trên Telegram
+### Bước 1 — Lấy Telegram Bot Token
 
-# Bước 2: Build và chạy
+Bạn cần tạo một Telegram bot và lấy token thông qua **@BotFather**:
+
+1. Mở Telegram, tìm kiếm **@BotFather** (chọn tài khoản có dấu tích xanh ✔️).
+2. Gửi lệnh `/newbot` và làm theo hướng dẫn:
+   - Đặt **tên hiển thị** cho bot (ví dụ: `My SkyClaw Agent`)
+   - Đặt **username** kết thúc bằng `bot` (ví dụ: `my_skyclaw_bot`)
+3. BotFather trả về token dạng: `123456789:AABBccDDeeFFggHH...`
+
+> 📖 Xem hướng dẫn chi tiết: [Cách Lấy Telegram Bot Token](docs/dev/telegram-bot-token.md)
+
+### Bước 2 — Build và Chạy
+
+```bash
 git clone https://github.com/nagisanzenin/skyclaw.git
 cd skyclaw
 cargo build --release
-export TELEGRAM_BOT_TOKEN="your-token-here"
+export TELEGRAM_BOT_TOKEN="123456789:AABBccDDeeFFggHH..."
 ./target/release/skyclaw start
-
-# Bước 3: Mở bot trong Telegram và dán API key của nhà cung cấp AI
-#         SkyClaw tự nhận diện nhà cung cấp và bắt đầu hoạt động
 ```
+
+### Bước 3 — Kết Nối AI Provider
+
+Mở bot trong Telegram và dán API key của nhà cung cấp AI:
+
+```
+sk-ant-...          ← Anthropic Claude
+sk-...              ← OpenAI GPT
+AIzaSy...           ← Google Gemini
+```
+
+SkyClaw tự nhận diện nhà cung cấp và bắt đầu hoạt động ngay.
 
 ---
 
@@ -203,10 +223,11 @@ backend = "sqlite"
 ```
 docs/
   dev/
-    getting-started.md   Hướng dẫn setup môi trường dev
-    architecture.md      Kiến trúc chi tiết, đồ thị phụ thuộc crate
-    adding-channel.md    Hướng dẫn thêm kênh nhắn tin mới
-    adding-provider.md   Hướng dẫn thêm nhà cung cấp AI mới
+    getting-started.md      Hướng dẫn setup môi trường dev
+    telegram-bot-token.md   Cách lấy Telegram Bot Token từ @BotFather
+    architecture.md         Kiến trúc chi tiết, đồ thị phụ thuộc crate
+    adding-channel.md       Hướng dẫn thêm kênh nhắn tin mới
+    adding-provider.md      Hướng dẫn thêm nhà cung cấp AI mới
   api/
     traits.md            Tài liệu tham khảo các trait cốt lõi
     types.md             Các kiểu dữ liệu dùng chung
